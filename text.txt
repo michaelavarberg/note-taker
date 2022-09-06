@@ -1,7 +1,5 @@
 TODO list
 
-Delete Develop folder and move things
-
 Re-read instructions and create all files
 
 Read through mini-project to make a list of things to do here:
