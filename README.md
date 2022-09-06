@@ -36,11 +36,9 @@ Walk-through video: https://drive.google.com/file/d/1NqJr6JAiJfHjpIUhPiwk_biaOAz
 
   ## License
   
-  This application is covered under None of the above.
+ N/A
 
   ## Contributing
-  
-  My Collaborators:
 
 N/A
 
