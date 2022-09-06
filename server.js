@@ -1,6 +1,10 @@
 //imports
 const express = require("express");
-const { readFromFile, readAndAppend } = require("./helpers/fsUtils");
+const {
+  readFromFile,
+  readAndAppend,
+  writeToFile,
+} = require("./helpers/fsUtils");
 const path = require("path");
 // const api = require("./routes/notes.js");
 const uuid = require("./helpers/uuid");
@@ -27,7 +31,7 @@ app.post("/api/notes", (req, res) => {
     const newNote = {
       title,
       text,
-      note_id: uuid(),
+      id: uuid(),
     };
 
     readAndAppend(newNote, "./db/db.json");
@@ -47,6 +51,21 @@ app.post("/api/notes", (req, res) => {
 app.get("/api/notes", (req, res) =>
   readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)))
 );
+
+// DELETE Route for api/notes/id
+// app.delete("/api/notes/:id", (req, res) => {
+//   const requestedId = req.params.id;
+//   readFromFile("./db/db.json")
+//     .then((data) => JSON.parse(data))
+//     .then((array) => {
+//       for (i = 0; i < array.length; i++) {
+//         if (array[i].id === requestedId) {
+//           array.splice(i);
+//         }
+//       }
+//       res.json("done");
+//     });
+// });
 
 //GET Route for homepage
 app.get("*", (req, res) =>
